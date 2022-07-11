@@ -19,13 +19,7 @@ namespace WebSocketsNotWorkingInTests
             build?.Invoke(builder);
             var app = builder.Build();
 
-            app.UseHttpsRedirection();
-            app.UseRouting();
-
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
-
+            app.MapControllers();
             app.UseWebSockets();
             return app;
         }
