@@ -32,7 +32,7 @@ namespace TestProject1
 
             using var ws = new ClientWebSocket();
             await ws.ConnectAsync(new Uri("wss://localhost:8080/ws"), CancellationToken.None);
-            await serverTask;
+            await serverTask; // If it reaches this far, then it has worked!
         }
     }
 }
